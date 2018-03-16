@@ -2,8 +2,16 @@ import java.util.ArrayList;
 import org.junit.*;
 import static org.junit.Assert.*;
 
-public class SistemaFinaceiroTest {
+public class SistemaFinanceiroTest {
     SistemaFinanceiro sist;
+    
+    public SistemaFinanceiroTest() {
+    }
+    
+    @Before
+    public void setUp() {
+        sist = new SistemaFinanceiro();
+    }
 
     @Test
     public void testFaixaAte1000reais() {
@@ -72,6 +80,5 @@ public class SistemaFinaceiroTest {
         assertEquals(1.4 * 100.0, p4.getValorTotal(), 0.0000001);
         assertEquals(20, p4.getNumeroDeParcelas());
         assertEquals(1.4 * 100.0 / 20, p4.getValorDaParcela(), 0.0000001);
-    }
-    
+    }   
 }
